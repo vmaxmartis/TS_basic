@@ -37,7 +37,14 @@ let doubleIt = series.map(function (item) {
 });
 console.log(doubleIt);
 
+// Array 
 var numbers = [2, 4, 6, 8];
+var fruit = ['Banana', 'Orange', 'Apple', 'Mango'];
+fruit[0]; // returns Apple
+fruit[1]; // returns Orange
+fruit[2]; // returns Banana
+console.log(fruit[3]);
+
 
 var doubleNumbers = numbers.map(function (num) {
   return num;
@@ -46,15 +53,15 @@ var doubleNumbers = numbers.map(function (num) {
 console.log(doubleNumbers); //  [4, 8, 12, 16]
 
 //POP XÓA PHẦN TỬ CUỐI MẢNH
-var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
-var item = fruits.pop();
+
+var item = fruit.pop();
 
 //PUSH THÊM VÀO CUỐI MẢNG
 console.log(item); // Mango
 
-console.log(fruits);
-var length = fruits.push('Kiwi');
-console.log(fruits); // ["Banana", "Orange", "Apple", "Mango", "Kiwi"]
+console.log(fruit);
+var length = fruit.push('Kiwi');
+console.log(fruit); // ["Banana", "Orange", "Apple", "Mango", "Kiwi"]
 //reduce duyệt từ trái qua phải
 var numbers = [1, 2, 3, 4, 5, 10];
 
@@ -119,27 +126,40 @@ console.log(input.toFixed(0)); //
 
 //Tuples
 //khai báo Tuples
-var Tuples: [string, number, boolean, number][];
+var Tuples: [string, number, boolean][];
 Tuples = [
-  ['Name', 21, true, 2],
-  ['Vmax', 22, true, 2],
+  ['Dinh', 21, true],
+  ['Thien', 22, true],
 ]; //arrays of tuples
 console.log(
   Tuples.push(
-    ['Thoai', 21, true, 2], ['Thoai', 21, true, 2], ['Nking', 21, true, 2]
+    ['Thoai', 21, true]
 
   )
 );
-console.log(Tuples[4]);
+console.log(Tuples);
+
 var thoai: [string, number, boolean, number][] = [
   ['Banana', 21, true, 2],
   Tuples[1],
   Tuples[0],
   Tuples[2],
-  Tuples[3],
+
 ];
-console.log(thoai);
+console.log();
 var test2: [string, number] = ['Banana', 18];
+
+
+// define our tuple
+let ourTuple: [number, boolean, string];
+
+// initialize correctly
+ourTuple = [9, false, 'Happy Day'];
+console.log(ourTuple);
+
+
+
+
 
 //ENUM : k định nghĩa data từ server gửi về 
 
@@ -377,7 +397,7 @@ console.log(echo("vmax"));
 
 class Person {
   //thuộc tính
-  ssn!: number;
+  id!: number;
   firstName!: string | number;
   lastName!: any;
   //3 biến ở ngoài gọi vào 
@@ -399,12 +419,12 @@ Person1.findAll("Quy", "Deptrai");
 console.log(Person1)
 
 
-class PersonX {
-  ssn;
+class Person {
+  id;
   firstName;
   lastName;
-  constructor(ssn: any, firstName: any, lastName: any) {
-    this.ssn = ssn;
+  constructor(id: number, firstName: string, lastName: string) {
+    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
 
@@ -413,18 +433,15 @@ class PersonX {
   getFullName() {
     return `${this.firstName} ${this.lastName}`;
   }
-}
-
-export class Employee extends PersonX {
+};
+ class Employee extends Person {
   address: string
-  constructor(ssn: any, firstName: any, lastName: any, address: any) {
-    super(ssn, firstName, lastName)
+  constructor(id: number, firstName: string, lastName: string, address: any) {
+    super(id, firstName, lastName)
     this.address = address
 
   }
-  getInfo() {
-    return `${this.firstName} `;
-  }
+  
 }
 const inFo = new Employee(1, 'Thoai', 'Dinh', "55 ngô mây")
 console.log(inFo);
@@ -524,4 +541,18 @@ interface Student2 {
   type MappedTypes = {
   [Key in keyof Student2]: boolean;
   };
-   //Utilyti 
+   //Utilyti
+
+   
+
+   let fruits: string[] = ['Apple', 'Orange', 'Banana']; 
+
+for(var index in fruits)
+{ 
+    console.log(fruits[index]);  // output: Apple Orange Banana
+}
+
+for(var i = 0; i < fruits.length; i++)
+{ 
+    console.log(fruits[i]); // output: Apple Orange Banana
+}

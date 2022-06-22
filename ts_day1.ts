@@ -117,3 +117,6 @@ console.log(fruits); // ["Banana", "Orange", "Lemon", "Kiwi", "Mango"];
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 2); // THAY THẾ PHẦN TỬ THỨ 2 2 LẦN
 console.log(fruits); // ["Banana", "Orange"]
+
+
+
